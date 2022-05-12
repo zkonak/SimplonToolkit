@@ -3,12 +3,12 @@ import { ScrollView, StyleSheet } from 'react-native';
 import { Button, Card,TextInput } from 'react-native-paper';
 import { DefaultTheme } from 'react-native-paper';
 
-function Home ({ navigation }) {
+function TodoList ({ navigation }) {
 
   return (
     <ScrollView style={styles.scrollView}>
       <Card style={styles.card}>
-        <Card.Title title="Home" />
+        <Card.Title title="Todo List" />
         <Card.Content>
         <TextInput mode="outlined" label="Name"/>
             <Button mode="contained"  onPress={() => navigation.navigate('Name', { name })}>
@@ -36,4 +36,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default Home
+export default TodoList;
