@@ -17,9 +17,9 @@ export default function App() {
       <NavigationContainer>
         <Bottom.Navigator
           initialRouteName="Home"
-          activeColor="#f0edf6"
-          inactiveColor="#3e2465"
-          barStyle={{ backgroundColor: "#694fad" }}
+          activeColor="#ffffff"
+          inactiveColor="#000000"
+          barStyle={{ backgroundColor: "#ED1651" }}
         >
           <Bottom.Screen
             name="Home"
