@@ -8,6 +8,7 @@ import Home from "./src/screens/Home";
 import TodoList from "./src/screens/TodoList";
 import Links from "./src/screens/Links";
 import Header from "./src/components/Header/Header";
+import AppRoute from "./src/navigations/navigator";
 
 const HomeRoute = () => <Home />;
 const TodoRoute = () => <TodoList />;
@@ -33,6 +34,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
+      <AppRoute/>
       <NavigationContainer>
         <Header HeaderName={routes[index].title} />
         <BottomNavigation
