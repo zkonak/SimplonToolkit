@@ -7,6 +7,7 @@ import STYLE from "./src/theme";
 import Home from "./src/screens/Home";
 import TodoList from "./src/screens/TodoList";
 import Links from "./src/screens/Links";
+import Header from "./src/components/Header/Header";
 
 const HomeRoute = () => <Home />;
 const TodoRoute = () => <TodoList />;
@@ -33,6 +34,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <NavigationContainer>
+        <Header HeaderName={routes[index].title} />
         <BottomNavigation
           navigationState={{ index, routes }}
           onIndexChange={setIndex}
