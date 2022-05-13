@@ -44,7 +44,10 @@ function Links({ navigation }) {
   ];
 
   return (
-    <View>
+    <View style={{
+      backgroundColor: "#fff",
+      paddingBottom: 200,
+    }}>
       <Text style={styles.titleFilters}>Filtres de formations</Text>
       <ScrollView style={styles.containerFilter} horizontal={true}>
         <View style={styles.viewFilter}>

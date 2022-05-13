@@ -3,8 +3,10 @@ import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { Button, Card, TextInput, Text } from "react-native-paper";
 import { DefaultTheme } from "react-native-paper";
 import { useDispatch } from "react-redux";
+import { registerUser } from "../../services/user.service";
 import { setSignIn } from "../../store/authSlice";
 import { userRegisterValidator } from "../../utils/user";
+import STYLE from "../../theme";
 
 function Register({ navigation }) {
   const [email, setEmail] = useState({ value: "", error: "" });
@@ -32,9 +34,13 @@ function Register({ navigation }) {
     const user = {
       isLoggedIn: true,
       email: email.value,
+      name:name.value,
+      lastname:lastname.value,
+      password:password.value,
+      codeEtudiant:codeEtudiant.value
       // userName: 'johnDoe'
     };
-
+     registerUser(user)
     dispatch(setSignIn(user));
   };
 
@@ -43,6 +49,7 @@ function Register({ navigation }) {
       <Card style={styles.card}>
         <Card.Content>
           <TextInput
+            style={styles.input}
             label="Email"
             returnKeyType="next"
             value={email.value}
@@ -53,8 +60,10 @@ function Register({ navigation }) {
             autoCompleteType="email"
             textContentType="emailAddress"
             keyboardType="email-address"
+            theme={{ colors: { primary: STYLE.MAINCOLOR } }}
           />
           <TextInput
+            style={styles.input}
             label="Prénom"
             returnKeyType="next"
             value={name.value}
@@ -65,8 +74,10 @@ function Register({ navigation }) {
             autoCompleteType="name"
             textContentType="name"
             keyboardType="name"
+            theme={{ colors: { primary: STYLE.MAINCOLOR } }}
           />
           <TextInput
+            style={styles.input}
             label="Nom"
             returnKeyType="next"
             value={lastname.value}
@@ -77,8 +88,10 @@ function Register({ navigation }) {
             autoCompleteType="lastname"
             textContentType="lastname"
             keyboardType="lastname"
+            theme={{ colors: { primary: STYLE.MAINCOLOR } }}
           />
           <TextInput
+            style={styles.input}
             label="Code Etudiant"
             returnKeyType="next"
             value={codeEtudiant.value}
@@ -86,9 +99,11 @@ function Register({ navigation }) {
             error={!!codeEtudiant.error}
             errorText={codeEtudiant.error}
             autoCapitalize="none"
+            theme={{ colors: { primary: STYLE.MAINCOLOR } }}
           />
 
           <TextInput
+            style={styles.input}
             label="Mot de passe"
             returnKeyType="done"
             value={password.value}
@@ -96,9 +111,11 @@ function Register({ navigation }) {
             error={!!password.error}
             errorText={password.error}
             secureTextEntry
+            theme={{ colors: { primary: STYLE.MAINCOLOR } }}
           />
 
           <TextInput
+            style={styles.input}
             label="Confirmation de Mot de passe"
             returnKeyType="done"
             value={confirmationPassword.value}
@@ -108,8 +125,14 @@ function Register({ navigation }) {
             error={!!confirmationPassword.error}
             errorText={confirmationPassword.error}
             secureTextEntry
+            theme={{ colors: { primary: STYLE.MAINCOLOR } }}
           />
-          <Button mode="contained" onPress={handleRegister}>
+          <Button
+            mode="contained"
+            onPress={handleRegister}
+            style={styles.loginbutton}
+            color={STYLE.MAINCOLOR}
+          >
             Inscription
           </Button>
           <TouchableOpacity onPress={() => navigation.navigate("Connexion")}>
@@ -129,13 +152,22 @@ const styles = StyleSheet.create({
     paddingTop: 10,
   },
   card: {
-    width: "90%",
+    width: "100%",
+    paddingHorizontal: 10,
+    paddingBottom: 300,
     marginLeft: "auto",
     marginRight: "auto",
   },
-  textInput: {
+  input: {
+    marginBottom: 10,
+    backgroundColor: "#fff",
+  },
+  loginbutton: {
+    padding: 10,
+    marginTop: 20,
     marginBottom: 10,
   },
+  link: { marginTop: 10, alignSelf: "center" },
 });
 
 export default Register;
