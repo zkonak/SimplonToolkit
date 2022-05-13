@@ -11,13 +11,13 @@ function Links({ navigation }) {
     "Développement d'Application",
     "Fondamentaux Numériques",
     "Gestion de Projet Agile",
-    "Cloud & Devops",
+    "Cloud & DevOps",
     "Data & Intelligence Artificielle",
   ];
   const links = [
     {
       title: "DailyDev",
-      description: "permet de faire ta veille",
+      description: "Un site proposant des articles intéressants pour ta veille",
       category: [
         "Infrastructures & Cybersecurité",
         "Développement d'Application",
@@ -31,14 +31,14 @@ function Links({ navigation }) {
     {
       title: "Miro",
       description:
-        "tu trouveras un ensemble d'outils pour le design et la conception",
+        "Tu trouveras un ensemble d'outils pour le design et la conception",
       category: ["Développement d'Application"],
       link: "https://miro.com/fr/",
     },
     {
       title: "Figma",
       description:
-        "Le  meilleur outil pour le design; créé tes maquettes avec Figma",
+        "Le meilleur outil pour le design: créé tes maquettes avec Figma",
       category: ["Développement d'Application"],
 
       link: "https://www.figma.com/",
