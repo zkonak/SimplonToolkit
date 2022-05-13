@@ -37,21 +37,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <AppRoute />
-      {/* <NavigationContainer>
-        <Header HeaderName={routes[index].title} />
-
-        <Stack.Navigator>
-          <Stack.Screen name="Settings" component={Settings} />
-        </Stack.Navigator>
-
-        <BottomNavigation
-          navigationState={{ index, routes }}
-          onIndexChange={setIndex}
-          renderScene={renderScene}
-          barStyle={{ backgroundColor: STYLE.MAINCOLOR }}
-        />
-      </NavigationContainer> */}
+      <AppRoute/>
     </Provider>
   );
 }
