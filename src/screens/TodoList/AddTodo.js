@@ -93,25 +93,35 @@ export const AddTodo = () => {
     triggerLocalNotificationHandler();
     setText('');
 
-
   }
+  
 
   return (
      <>
-       <TextInput placeholder="Todo" value={text} onChangeText={setText} style={styles.input} />
-      <Button title="Add" onPress={handleSumbit}/>
+       <TextInput placeholder="À faire" value={text} onChangeText={setText} style={styles.input} />
+      <Button title="Ajouter" onPress={handleSumbit}/>
      </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    margin: 2,
-  },
+   
+        flex: 1,
+        alignItems: 'center',
+        padding: 10,
+      },
   input: {
-    backgroundColor: "ghostwhite",
-    marginBottom: 8,
-    padding: 8,
-    height: 40,
-  },
+    width: '90%',
+    borderWidth: 1,
+    borderColor: '#555555',
+    borderRadius: 10,
+    backgroundColor: '#ffffff',
+    textAlign: 'left',
+    fontSize: 20,
+    margin: 10,
+    paddingHorizontal: 10,
+},
+
+
 });
