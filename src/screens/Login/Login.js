@@ -48,7 +48,7 @@ function Login({ navigation }) {
           />
 
           <TextInput
-            label="Mot de Passe"
+            label="Mot de passe"
             returnKeyType="done"
             value={password.value}
             onChangeText={(text) => setPassword({ value: text, error: "" })}

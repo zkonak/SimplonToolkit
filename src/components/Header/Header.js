@@ -15,7 +15,7 @@ const Header = (props) => {
 
       <Button
         onPress={() => {
-          navigate("Settings"); // use navigator to trigger stack navigation
+          props.navigator.navigate("Paramètres"); // use navigator to trigger stack navigation
         }}
       >
         <Avatar.Icon

@@ -10,7 +10,6 @@ import Links from "./src/screens/Links";
 import Header from "./src/components/Header/Header";
 import AppRoute from "./src/navigations/navigator";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
-import Settings from "./src/screens/Settings";
 
 const HomeRoute = () => <Home />;
 const TodoRoute = () => <TodoList />;
@@ -29,6 +28,7 @@ export default function App() {
   ]);
 
   const Stack = createNativeStackNavigator();
+
   const renderScene = BottomNavigation.SceneMap({
     home: HomeRoute,
     todoList: TodoRoute,
