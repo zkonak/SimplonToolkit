@@ -18,13 +18,13 @@ export function ToDo() {
   if (!todos.length) {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>Start creating a new todo</Text>
+        <Text style={styles.title}>Mission du jour </Text>
       </View>
     );
   }
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Todo List</Text>
+      <Text style={styles.title}>Liste des missions</Text>
       {todos.map((todo, index) => (
         <>
           <Checkbox
