@@ -1,7 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, View, Text } from "react-native";
-import { Button, Card, TextInput } from "react-native-paper";
-import { DefaultTheme } from "react-native-paper";
+import { ScrollView, StyleSheet, View, Text, Linking } from "react-native";
 import { Chip } from "react-native-paper";
 import { List } from "react-native-paper";
 
@@ -26,14 +24,14 @@ function Links({ navigation }) {
         "Cloud & Devops",
         "Data & Intelligence Artificielle",
       ],
-      link: "https://daily.dev/apps",
+      url: "https://daily.dev/apps",
     },
     {
       title: "Miro",
       description:
         "Tu trouveras un ensemble d'outils pour le design et la conception",
       category: ["Développement d'Application"],
-      link: "https://miro.com/fr/",
+      url: "https://miro.com/fr/",
     },
     {
       title: "Figma",
@@ -41,14 +39,14 @@ function Links({ navigation }) {
         "Le meilleur outil pour le design: créé tes maquettes avec Figma",
       category: ["Développement d'Application"],
 
-      link: "https://www.figma.com/",
+      url: "https://www.figma.com/",
     },
   ];
 
   return (
     <View>
       <Text style={styles.titleFilters}>Filtres de formations</Text>
-      <ScrollView style={styles.containerFilter}>
+      <ScrollView style={styles.containerFilter} horizontal={true}>
         <View style={styles.viewFilter}>
           {titleFilter.map((filter, index) => (
             <Chip
@@ -62,32 +60,43 @@ function Links({ navigation }) {
           ))}
         </View>
       </ScrollView>
-      <ScrollView style={styles.containerLink}>
+      <View style={styles.containerLink}>
         <View style={styles.viewLink}>
           {links.map((link, i) => (
-            // <Text key={i}>{link.title}</Text>
             <List.Item
               style={styles.listItem}
               key={i}
               title={link.title}
               description={link.description}
               left={(props) => <List.Icon {...props} icon="link" />}
+              right={(props) => (
+                <List.Icon
+                  style={styles.heart}
+                  {...props}
+                  icon="heart"
+                  // onPress={() => {
+                  //   console.log("heart pressed");
+                  // }}
+                />
+              )}
+              onPress={() => {
+                Linking.openURL(`${link.url}`);
+                console.log(`${link.title} pressed`);
+              }}
             />
           ))}
           {/* links.filter(link => link.category ===) */}
         </View>
-      </ScrollView>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
   titleFilters: {
-    fontFamily: "Roboto",
     padding: 10,
   },
   containerFilter: {
-    // backgroundColor: "green",
     padding: 30,
   },
   viewFilter: {
@@ -99,22 +108,15 @@ const styles = StyleSheet.create({
   },
   containerLink: {
     flexDirection: "row",
-    // backgroundColor: "blue",
   },
   viewLink: {
     flex: 1,
-    // flexWrap: "wrap",
-    // flexShrink: 1,
     width: 350,
-    // margin: 100,
     flexGrow: 1,
   },
-  listItem: {
-    // flex: 1,
-    // flexWrap: "wrap",
-    // flexShrink: 1,
-    // width: 200,
-    // flexGrow: 1,
+  listItem: {},
+  heart: {
+    zindex: 1000,
   },
 });
 
