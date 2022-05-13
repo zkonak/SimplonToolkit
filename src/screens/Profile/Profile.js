@@ -7,24 +7,20 @@ import { setSignOut } from "../../store/authSlice";
 
 function Profile({ navigation }) {
   const dispatch = useDispatch();
-
   const handleLogout = () => {
     dispatch(setSignOut());
   };
   return (
     <ScrollView style={styles.scrollView}>
-      <List.Item
-        title="Compte"
-        style={styles.listItem}
-        //left={() => <List.Icon icon="" />}
-      />
+      {/* <Text>Bonjour {user.firstName} !</Text> */}
+
+      <List.Item title="Compte" style={styles.listItem} />
 
       <List.Item title="Notifications" style={styles.listItem} />
       <List.Item
         title="Se déconnecter"
         style={styles.listItem}
         onPress={handleLogout}
-        // style={{ backgroundColor: "#fc574e" }}
       />
     </ScrollView>
   );
