@@ -1,41 +1,55 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet } from "react-native";
-import { TouchableOpacity, Text, View, Image } from "react-native";
+import { Avatar } from "react-native-paper";
+import {
+  StyleSheet,
+  Linking,
+  TouchableOpacity,
+  Text,
+  View,
+} from "react-native";
 
 const Applications = [
   {
     id: 1,
     name: "Discord",
-    image: "https://www.svgrepo.com/show/353655/discord-icon.svg",
+    image: "./images/Discord.svg",
     link: "https://discordapp.com/",
   },
   {
     id: 2,
-    name: "Simplon line",
-    image: "https://www.est-ensemble.fr/sites/default/files/styles/large_slider/public/logo_simplon_simple_red1.png?itok=J7wPlX1N",
-    link: "https://discordapp.com/",
+    name: "Simplon Line",
+    image: "./images/Simplon Line.svg",
+    link: "https://simplonline.co/login",
   },
   {
     id: 3,
     name: "Notion",
-    image: "https://luna1.co/28ec04.png",
-    link: "https://discordapp.com/",
+    image: "./images/Notion.svg",
+    link: "https://www.notion.so/login",
   },
   {
     id: 4,
     name: "SWS",
-    image: "https://play-lh.googleusercontent.com/orDU3uquzyUpEbz4lRLU-1u_4tVB0UyXenjKId2bE22yd5jGeqe2cNmV25iSkWZPPA",
-    link: "https://discordapp.com/",
+    image: "./images/SWS.svg",
+    link: "https://sowesign.com/",
   },
-  
 ];
 
 function Home() {
   return (
     <View style={styles.container}>
       {Applications.map((application) => (
-        <TouchableOpacity key={application.id} style={styles.card}>
-          <Image style={styles.tinyLogo} source={application.image} />
+        <TouchableOpacity
+          key={application.id}
+          style={styles.card}
+          onPress={() => {
+            Linking.openURL(application.link);
+          }}
+        >
+          <Avatar.Image
+            style={styles.tinyLogo}
+            source={require(`${application.image}`)}
+          />
           <Text style={styles.cardTitle}>{application.name}</Text>
         </TouchableOpacity>
       ))}
@@ -67,6 +81,7 @@ const styles = StyleSheet.create({
     marginVertical: 5,
     height: 70,
     width: 70,
+    backgroundColor: "#fff",
   },
   cardTitle: {
     textAlign: "center",

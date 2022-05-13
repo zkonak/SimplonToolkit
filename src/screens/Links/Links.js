@@ -83,7 +83,6 @@ function Links({ navigation }) {
 
 const styles = StyleSheet.create({
   titleFilters: {
-    fontFamily: "Roboto",
     padding: 10,
   },
   containerFilter: {
