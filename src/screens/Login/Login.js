@@ -25,7 +25,7 @@ function Login({ navigation }) {
     const user = {
       isLoggedIn: true,
       email: email.value,
-      password:password.value
+      password: password.value,
       // userName: 'johnDoe'
     };
     // loginUser(user),
@@ -101,7 +101,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
     backgroundColor: "#fff",
   },
-  link: { marginTop: 10, alignSelf: "center" },
+  link: { 
+    marginTop: 10, 
+    alignSelf: "center" 
+  },
   loginbutton: {
     padding: 10,
     marginTop: 20,
