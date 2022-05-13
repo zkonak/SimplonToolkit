@@ -22,7 +22,7 @@ const ProfileRoute = () => <Profile />;
 
 const AppRoute = () => {
   //React.useState(false);  for change state true:connecté, false : non
-  //const [isLoggedIn, setIsLoggedIn] = React.useState(false);
+  // const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const isLoggedIn = useSelector(selectIsLoggedIn);
   // const isLoggedIn = true; // TODO: use ^ for demo
   const [index, setIndex] = React.useState(0);

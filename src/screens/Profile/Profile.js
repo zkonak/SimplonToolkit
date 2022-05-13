@@ -1,6 +1,15 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet } from "react-native";
-import { Button, Card, TextInput, List, Item, Icon } from "react-native-paper";
+import { ScrollView, StyleSheet, View } from "react-native";
+import {
+  Button,
+  Card,
+  TextInput,
+  List,
+  Item,
+  Icon,
+  Text,
+  Avatar,
+} from "react-native-paper";
 import { DefaultTheme } from "react-native-paper";
 import { useDispatch } from "react-redux";
 import { setSignOut } from "../../store/authSlice";
@@ -10,10 +19,25 @@ function Profile({ navigation }) {
   const handleLogout = () => {
     dispatch(setSignOut());
   };
+
+  const user = { firstName: "John", email: "johndoe@gmail.com" };
+
   return (
     <ScrollView style={styles.scrollView}>
-      {/* <Text>Bonjour {user.firstName} !</Text> */}
-
+      <View
+        style={{
+          alignItems: "center",
+        }}
+      >
+        <Avatar.Image
+          size={128}
+          style={{ backgroundColor: "white" }}
+          source={require("../../../assets/icon.png")}
+        />
+        <Text style={{ fontSize: 20, marginTop: 10 }}>
+          Bonjour {user.firstName} !
+        </Text>
+      </View>
       <List.Item title="Compte" style={styles.listItem} />
 
       <List.Item title="Notifications" style={styles.listItem} />
