@@ -1,9 +1,12 @@
+import { setStatusBarBackgroundColor } from "expo-status-bar";
 import React, { useState } from "react";
 import { ScrollView, StyleSheet, View, Text, Linking } from "react-native";
 import { Chip } from "react-native-paper";
 import { List } from "react-native-paper";
+import STYLE from "../../theme"
 
 function Links({ navigation }) {
+  const [colorHeart, setColorHeart] = useState(`${STYLE.MAINCOLOR}`);
   const titleFilter = [
     "Infrastructures & Cybersecurité",
     "Développement d'Application",
@@ -74,9 +77,11 @@ function Links({ navigation }) {
                   style={styles.heart}
                   {...props}
                   icon="heart"
-                  // onPress={() => {
-                  //   console.log("heart pressed");
-                  // }}
+                  color={`${colorHeart}`}
+                  onPress={() => {
+                    setColorHeart("red");
+                    console.log("heart pressed");
+                  }}
                 />
               )}
               onPress={() => {

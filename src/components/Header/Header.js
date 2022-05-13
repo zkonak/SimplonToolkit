@@ -19,7 +19,7 @@ const Header = (props) => {
       <Button
         style={{ size: 100 }}
         onPress={() => {
-          props.navigator.navigate(""); // use navigator to trigger stack navigation
+          props.navigator.navigate("");
         }}
         color={STYLE.MAINCOLOR}
       >
