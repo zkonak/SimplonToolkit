@@ -37,6 +37,7 @@ export default function App() {
 
   return (
     <Provider store={store}>
+<<<<<<< HEAD
       <AppRoute />
       {/* <NavigationContainer>
         <Header HeaderName={routes[index].title} />
@@ -52,6 +53,9 @@ export default function App() {
           barStyle={{ backgroundColor: STYLE.MAINCOLOR }}
         />
       </NavigationContainer> */}
+=======
+      <AppRoute/>
+>>>>>>> a1c671b (added images)
     </Provider>
   );
 }
