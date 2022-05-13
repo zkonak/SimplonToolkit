@@ -74,7 +74,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     gap: 25,
     justifyContent: "space-around",
-    paddingBottom: 300,
+    paddingBottom:700,
   },
   card: {
     padding: 0,

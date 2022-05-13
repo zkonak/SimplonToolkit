@@ -6,7 +6,9 @@ import { AddTodo } from "./AddTodo";
 
 function TodoList({ navigation }) {
   return (
-    <ScrollView>
+    <ScrollView style={{
+      backgroundColor: "#fff"
+    }}>
       <AddTodo />
       <ToDo />
     </ScrollView>

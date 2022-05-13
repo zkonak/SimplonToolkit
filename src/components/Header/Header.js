@@ -16,14 +16,8 @@ const Header = (props) => {
     >
       <Appbar.Content title={props.HeaderName} color="#000" />
 
-      <Button
-        style={{ size: 100 }}
-        onPress={() => {
-          props.navigator.navigate(""); // use navigator to trigger stack navigation
-        }}
-        color={STYLE.MAINCOLOR}
-      >
-        <View style={{ flexDirection: 'row' }}>
+      <Button style={{ size: 100 }} color={STYLE.MAINCOLOR}>
+        <View style={{ flexDirection: "row" }}>
           <Avatar.Icon
             size={38}
             icon="bell"

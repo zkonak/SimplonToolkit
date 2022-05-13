@@ -89,7 +89,7 @@ export const AddTodo = () => {
     <>
       <TextInput
         placeholder="Todo"
-        value={text}
+        value={text ? text : ""}
         onChangeText={setText}
         style={styles.input}
       />
@@ -109,7 +109,7 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     marginTop: 50,
     marginBottom: 20,
-    padding: 10,
+    padding: 20,
     height: 40,
   },
 });
