@@ -48,7 +48,7 @@ function Home() {
         >
           <Avatar.Image
             style={styles.tinyLogo}
-            source={require(`${application.image}`)}
+            source={require(`./images/Discord.svg`)}
           />
           <Text style={styles.cardTitle}>{application.name}</Text>
         </TouchableOpacity>
