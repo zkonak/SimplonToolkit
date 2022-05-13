@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { Button, Card, TextInput, Text } from "react-native-paper";
 import { DefaultTheme } from "react-native-paper";
 import { useDispatch } from "react-redux";
+import { registerUser } from "../../services/user.service";
 import { setSignIn } from "../../store/authSlice";
 import { userRegisterValidator } from "../../utils/user";
 import STYLE from "../../theme";
@@ -33,9 +34,13 @@ function Register({ navigation }) {
     const user = {
       isLoggedIn: true,
       email: email.value,
+      name:name.value,
+      lastname:lastname.value,
+      password:password.value,
+      codeEtudiant:codeEtudiant.value
       // userName: 'johnDoe'
     };
-
+     registerUser(user)
     dispatch(setSignIn(user));
   };
 

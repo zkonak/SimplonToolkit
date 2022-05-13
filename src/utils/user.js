@@ -9,8 +9,8 @@ const isUserLoggedIn = (email,password) => {
 }
 
 const userRegisterValidator = (email,password,confirmationPassword) => {
-  if(password!==confirmationPassword){
-      return 'Mot de Passes sont différents.'
-  }
+  // if(password!==confirmationPassword){
+  //     return 'Mot de Passes sont différents.'
+  // }
 }
 export  {userLoginValidator,userRegisterValidator,isUserLoggedIn};
