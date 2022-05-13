@@ -28,7 +28,7 @@ function Login({ navigation }) {
       password:password.value
       // userName: 'johnDoe'
     };
-    loginUser(user),
+    // loginUser(user),
     dispatch(setSignIn(user));
   };
 
@@ -110,8 +110,7 @@ const styles = StyleSheet.create({
   coverPhoto: {
     width: 250,
     height: 300,
-    marginHorizontal: "auto",
-    objectFit: "cover",
+    marginHorizontal: 60,
     marginBottom: 10,
   },
 });

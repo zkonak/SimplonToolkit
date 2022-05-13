@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { TextInput, Button, StyleSheet } from "react-native";
+import { StyleSheet } from "react-native";
 import { useDispatch } from "react-redux";
 import { addTodo } from "../../store/toDoSlice";
 import * as Notifications from "expo-notifications";
 import * as Permissions from "expo-permissions";
 import STYLE from "../../theme";
+import { Button, Card, TextInput, Text } from "react-native-paper";
 
 // Show notifications when the app is in the foreground
 Notifications.setNotificationHandler({
@@ -83,39 +84,58 @@ export const AddTodo = () => {
     dispatch(addTodo(text));
     triggerLocalNotificationHandler();
     setText("");
-
   }
-  
 
   return (
-
     <>
       <TextInput
         placeholder="Todo"
         value={text ? text : ""}
         onChangeText={setText}
         style={styles.input}
+        theme={{ colors: { primary: STYLE.MAINCOLOR } }}
       />
-      <Button title="Ajouter" onPress={handleSumbit} />
-    </>
+      {/* <Button
+        title="Ajouter"
+        onPress={handleSumbit}
+        color={STYLE.MAINCOLOR}
+        style={{
+          marginTop: 10,
+          padding: 100,
+        }}
 
+      
+        
+      /> */}
+
+      <Button
+        mode="contained"
+        onPress={handleSumbit}
+        color={STYLE.MAINCOLOR}
+        style={{
+          marginTop: 10,
+          padding: 10,
+          margin: 20,
+        }}
+      >
+        Ajouter
+      </Button>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-   
-        flex: 1,
-        alignItems: 'center',
-        padding: 10,
-      },
+    flex: 1,
+    alignItems: "center",
+    padding: 10,
+  },
   input: {
     backgroundColor: "ghostwhite",
-    borderColor: STYLE.MAINCOLOR,
-    borderWidth: 1,
     marginHorizontal: 5,
     marginTop: 50,
     marginBottom: 20,
+    marginHorizontal: 20,
     padding: 20,
     height: 40,
   },

@@ -28,6 +28,7 @@ export function ToDo() {
       {todos.map((todo, index) => (
         <>
           <Checkbox
+            key={index}
             status={todo.completed ? "checked" : "unchecked"}
             //{checked ? 'checked' : 'unchecked'}
 
