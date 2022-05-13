@@ -110,7 +110,8 @@ const styles = StyleSheet.create({
   coverPhoto: {
     width: 250,
     height: 300,
-    marginHorizontal: 60,
+    marginLeft: "auto",
+    marginRight: "auto",
     marginBottom: 10,
   },
 });
