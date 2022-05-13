@@ -1,39 +1,121 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { Button, Card,TextInput } from 'react-native-paper';
-import { DefaultTheme } from 'react-native-paper';
+import React, { useState } from "react";
+import { ScrollView, StyleSheet, View, Text } from "react-native";
+import { Button, Card, TextInput } from "react-native-paper";
+import { DefaultTheme } from "react-native-paper";
+import { Chip } from "react-native-paper";
+import { List } from "react-native-paper";
 
-function Links ({ navigation }) {
+function Links({ navigation }) {
+  const titleFilter = [
+    "Infrastructures & Cybersecurité",
+    "Développement d'Application",
+    "Fondamentaux Numériques",
+    "Gestion de Projet Agile",
+    "Cloud & Devops",
+    "Data & Intelligence Artificielle",
+  ];
+  const links = [
+    {
+      title: "DailyDev",
+      description: "permet de faire ta veille",
+      category: [
+        "Infrastructures & Cybersecurité",
+        "Développement d'Application",
+        "Fondamentaux Numériques",
+        "Gestion de Projet Agile",
+        "Cloud & Devops",
+        "Data & Intelligence Artificielle",
+      ],
+      link: "https://daily.dev/apps",
+    },
+    {
+      title: "Miro",
+      description:
+        "tu trouveras un ensemble d'outils pour le design et la conception",
+      category: ["Développement d'Application"],
+      link: "https://miro.com/fr/",
+    },
+    {
+      title: "Figma",
+      description:
+        "Le  meilleur outil pour le design; créé tes maquettes avec Figma",
+      category: ["Développement d'Application"],
+
+      link: "https://www.figma.com/",
+    },
+  ];
 
   return (
-    <ScrollView style={styles.scrollView}>
-      <Card style={styles.card}>
-        <Card.Title title="Links" />
-        <Card.Content>
-        <TextInput mode="outlined" label="Name"/>
-            <Button mode="contained"  onPress={() => navigation.navigate('Name', { name })}>
-                Button
-    	</Button>
-    </Card.Content>
-   </Card>
-     
-    </ScrollView>
-  )
+    <View>
+      <Text style={styles.titleFilters}>Filtres de formations</Text>
+      <ScrollView style={styles.containerFilter}>
+        <View style={styles.viewFilter}>
+          {titleFilter.map((filter, index) => (
+            <Chip
+              key={index}
+              icon="information"
+              style={styles.chip}
+              onPress={() => console.log("Pressed")}
+            >
+              {filter}
+            </Chip>
+          ))}
+        </View>
+      </ScrollView>
+      <ScrollView style={styles.containerLink}>
+        <View style={styles.viewLink}>
+          {links.map((link, i) => (
+            // <Text key={i}>{link.title}</Text>
+            <List.Item
+              style={styles.listItem}
+              key={i}
+              title={link.title}
+              description={link.description}
+              left={(props) => <List.Icon {...props} icon="link" />}
+            />
+          ))}
+          {/* links.filter(link => link.category ===) */}
+        </View>
+      </ScrollView>
+    </View>
+  );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: DefaultTheme.colors.background,
-    paddingTop: 10
+  titleFilters: {
+    fontFamily: "Roboto",
+    padding: 10,
   },
-  card: {
-    width: '90%',
-    marginLeft: 'auto',
-    marginRight: 'auto'
+  containerFilter: {
+    // backgroundColor: "green",
+    padding: 30,
   },
-  textInput: {
-    marginBottom: 10
-  }
+  viewFilter: {
+    flexDirection: "row",
+  },
+  chip: {
+    fontSize: 30,
+    margin: 5,
+  },
+  containerLink: {
+    flexDirection: "row",
+    // backgroundColor: "blue",
+  },
+  viewLink: {
+    flex: 1,
+    // flexWrap: "wrap",
+    // flexShrink: 1,
+    width: 350,
+    // margin: 100,
+    flexGrow: 1,
+  },
+  listItem: {
+    // flex: 1,
+    // flexWrap: "wrap",
+    // flexShrink: 1,
+    // width: 200,
+    // flexGrow: 1,
+  },
 });
 
-export default Links
+export default Links;
