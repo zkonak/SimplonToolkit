@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet, View ,Text} from "react-native";
+import { ScrollView, StyleSheet, View, Text } from "react-native";
 import { Button, Card, TextInput } from "react-native-paper";
 import { DefaultTheme } from "react-native-paper";
 import { Chip } from "react-native-paper";
@@ -18,18 +18,29 @@ function Links({ navigation }) {
     {
       title: "DailyDev",
       description: "permet de faire ta veille",
+      category: [
+        "Infrastructures & Cybersecurité",
+        "Développement d'Application",
+        "Fondamentaux Numériques",
+        "Gestion de Projet Agile",
+        "Cloud & Devops",
+        "Data & Intelligence Artificielle",
+      ],
       link: "https://daily.dev/apps",
     },
     {
       title: "Miro",
       description:
         "tu trouveras un ensemble d'outils pour le design et la conception",
+      category: ["Développement d'Application"],
       link: "https://miro.com/fr/",
     },
     {
       title: "Figma",
       description:
         "Le  meilleur outil pour le design; créé tes maquettes avec Figma",
+      category: ["Développement d'Application"],
+
       link: "https://www.figma.com/",
     },
   ];
@@ -63,6 +74,7 @@ function Links({ navigation }) {
               left={(props) => <List.Icon {...props} icon="link" />}
             />
           ))}
+          {/* links.filter(link => link.category ===) */}
         </View>
       </ScrollView>
     </View>
@@ -70,9 +82,9 @@ function Links({ navigation }) {
 }
 
 const styles = StyleSheet.create({
-  titleFilters:{
-    fontFamily:"Roboto",
-    padding: 10
+  titleFilters: {
+    fontFamily: "Roboto",
+    padding: 10,
   },
   containerFilter: {
     // backgroundColor: "green",
