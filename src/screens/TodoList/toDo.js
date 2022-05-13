@@ -1,6 +1,7 @@
 import React from "react";
 import { Text, View, StyleSheet } from "react-native";
-import { Checkbox } from "react-native-paper";
+// import { Checkbox } from "react-native-paper";
+import { CheckBox } from "react-native-elements";
 import { useSelector, useDispatch } from "react-redux";
 import { toggleTodo } from "../../store/toDoSlice";
 
@@ -26,24 +27,25 @@ export function ToDo() {
     <View style={styles.container}>
       <Text style={styles.title}>Liste des missions</Text>
       {todos.map((todo, index) => (
-        <>
-          <Checkbox
-            key={index}
-            status={todo.completed ? "checked" : "unchecked"}
-            //{checked ? 'checked' : 'unchecked'}
+        <CheckBox
+          key={index + 1}
+          theme={{
+            colors: {
+              primary: "red",
+            },
+          }}
+          style={styles.checkbox}
+          checked={todo.completed}
+          //{checked ? 'checked' : 'unchecked'}
 
-            onPress={() => {
-              dispatch(
-                toggleTodo(todo.id)
-                //  setChecked(!checked)
-              );
-            }}
-          />
-
-          <Text style={styles.todoText} key={todo.id}>{`${index + 1}. ${
-            todo.text
-          }`}</Text>
-        </>
+          onPress={() => {
+            dispatch(
+              toggleTodo(todo.id)
+              //  setChecked(!checked)
+            );
+          }}
+          title={`${index + 1}. ${todo.text}`}
+        />
       ))}
     </View>
   );
@@ -59,5 +61,10 @@ const styles = StyleSheet.create({
   },
   todoText: {
     margin: 4,
+  },
+  checkbox: {
+    margin: 4,
+    borderWidth: 1,
+    borderColor: "black",
   },
 });
