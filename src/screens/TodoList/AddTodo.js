@@ -83,9 +83,12 @@ export const AddTodo = () => {
     dispatch(addTodo(text));
     triggerLocalNotificationHandler();
     setText("");
+
   }
+  
 
   return (
+
     <>
       <TextInput
         placeholder="Todo"
@@ -93,15 +96,19 @@ export const AddTodo = () => {
         onChangeText={setText}
         style={styles.input}
       />
-      <Button title="Add" onPress={handleSumbit} />
+      <Button title="Ajouter" onPress={handleSumbit} />
     </>
+
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    margin: 2,
-  },
+   
+        flex: 1,
+        alignItems: 'center',
+        padding: 10,
+      },
   input: {
     backgroundColor: "ghostwhite",
     borderColor: STYLE.MAINCOLOR,

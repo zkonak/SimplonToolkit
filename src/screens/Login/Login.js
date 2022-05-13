@@ -3,6 +3,7 @@ import { ScrollView, StyleSheet, TouchableOpacity } from "react-native";
 import { Button, Card, TextInput, Text } from "react-native-paper";
 import { DefaultTheme } from "react-native-paper";
 import { useDispatch } from "react-redux";
+import { loginUser } from "../../services/user.service";
 import { setSignIn } from "../../store/authSlice";
 import { userLoginValidator } from "../../utils/user";
 import STYLE from "../../theme";
@@ -24,9 +25,10 @@ function Login({ navigation }) {
     const user = {
       isLoggedIn: true,
       email: email.value,
+      password:password.value
       // userName: 'johnDoe'
     };
-
+    loginUser(user),
     dispatch(setSignIn(user));
   };
 
