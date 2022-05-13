@@ -5,14 +5,16 @@ import { ToDo } from "./toDo";
 import { AddTodo } from "./AddTodo";
 
 
+
 function TodoList ({navigation}) {
+ 
   
   return (
-<View style={styles.body}>
-  <AddTodo/>
-  <ToDo/>
+<ScrollView>
+   <AddTodo/> 
+   <ToDo/> 
 
-// </View>
+ </ScrollView>
 
   )
 }
