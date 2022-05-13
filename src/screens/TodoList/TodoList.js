@@ -1,39 +1,24 @@
-import React, { useState } from 'react';
-import { ScrollView, StyleSheet } from 'react-native';
-import { Button, Card,TextInput } from 'react-native-paper';
-import { DefaultTheme } from 'react-native-paper';
+import AsyncStorage from "@react-native-async-storage/async-storage";
+import React, { useEffect } from "react";
+import { ScrollView, StyleSheet, View } from "react-native";
+import { ToDo } from "./toDo";
+import { AddTodo } from "./AddTodo";
 
-function TodoList ({ navigation }) {
-
+function TodoList({ navigation }) {
   return (
-    <ScrollView style={styles.scrollView}>
-      <Card style={styles.card}>
-        <Card.Title title="Todo List" />
-        <Card.Content>
-        <TextInput mode="outlined" label="Name"/>
-            <Button mode="contained"  onPress={() => navigation.navigate('Name', { name })}>
-                Button
-    	</Button>
-    </Card.Content>
-   </Card>
-     
+    <ScrollView style={{
+      backgroundColor: "#fff"
+    }}>
+      <AddTodo />
+      <ToDo />
     </ScrollView>
-  )
+  );
 }
 
 const styles = StyleSheet.create({
-  scrollView: {
-    backgroundColor: DefaultTheme.colors.background,
-    paddingTop: 10
+  body: {
+    flex: 1,
   },
-  card: {
-    width: '90%',
-    marginLeft: 'auto',
-    marginRight: 'auto'
-  },
-  textInput: {
-    marginBottom: 10
-  }
 });
 
 export default TodoList;
