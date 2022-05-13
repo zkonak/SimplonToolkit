@@ -41,7 +41,6 @@ function Register({ navigation }) {
   return (
     <ScrollView style={styles.scrollView}>
       <Card style={styles.card}>
-        <Card.Title title="Register" />
         <Card.Content>
           <TextInput
             label="Email"
@@ -113,9 +112,9 @@ function Register({ navigation }) {
           <Button mode="contained" onPress={handleRegister}>
             Inscription
           </Button>
-          <TouchableOpacity onPress={() => navigation.navigate("Login")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Connexion")}>
             <Text style={styles.link}>
-              si vous avez déja un compte connectez vous en clicquent ici
+              Vous avez déjà un compte ? Connectez-vous
             </Text>
           </TouchableOpacity>
         </Card.Content>

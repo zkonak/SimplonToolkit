@@ -32,7 +32,6 @@ function Login({ navigation }) {
   return (
     <ScrollView style={styles.scrollView}>
       <Card style={styles.card}>
-        <Card.Title title="Connexion" />
         <Card.Content>
           <TextInput
             label="Email"
@@ -59,7 +58,7 @@ function Login({ navigation }) {
           <Button mode="contained" onPress={handleLogin}>
             Connexion
           </Button>
-          <TouchableOpacity onPress={() => navigation.navigate("Register")}>
+          <TouchableOpacity onPress={() => navigation.navigate("Inscription")}>
             <Text style={styles.link}>Pas de compte ? Créer un compte</Text>
           </TouchableOpacity>
         </Card.Content>
