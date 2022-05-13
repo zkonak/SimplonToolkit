@@ -9,6 +9,8 @@ import TodoList from "./src/screens/TodoList";
 import Links from "./src/screens/Links";
 import Header from "./src/components/Header/Header";
 import AppRoute from "./src/navigations/navigator";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Settings from "./src/screens/Settings";
 
 const HomeRoute = () => <Home />;
 const TodoRoute = () => <TodoList />;
@@ -26,6 +28,7 @@ export default function App() {
     { key: "links", title: "Links", icon: "link" },
   ]);
 
+  const Stack = createNativeStackNavigator();
   const renderScene = BottomNavigation.SceneMap({
     home: HomeRoute,
     todoList: TodoRoute,
@@ -34,9 +37,14 @@ export default function App() {
 
   return (
     <Provider store={store}>
-      <AppRoute/>
+      <AppRoute />
       <NavigationContainer>
         <Header HeaderName={routes[index].title} />
+
+        <Stack.Navigator>
+          <Stack.Screen name="Settings" component={Settings} />
+        </Stack.Navigator>
+
         <BottomNavigation
           navigationState={{ index, routes }}
           onIndexChange={setIndex}
