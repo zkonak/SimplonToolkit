@@ -11,8 +11,9 @@ const Applications = [
   },
   {
     id: 2,
-    name: "Simplon line",
-    image: "https://www.est-ensemble.fr/sites/default/files/styles/large_slider/public/logo_simplon_simple_red1.png?itok=J7wPlX1N",
+    name: "Simplonline",
+    image:
+      "https://www.est-ensemble.fr/sites/default/files/styles/large_slider/public/logo_simplon_simple_red1.png?itok=J7wPlX1N",
     link: "https://discordapp.com/",
   },
   {
@@ -24,10 +25,10 @@ const Applications = [
   {
     id: 4,
     name: "SWS",
-    image: "https://play-lh.googleusercontent.com/orDU3uquzyUpEbz4lRLU-1u_4tVB0UyXenjKId2bE22yd5jGeqe2cNmV25iSkWZPPA",
+    image:
+      "https://play-lh.googleusercontent.com/orDU3uquzyUpEbz4lRLU-1u_4tVB0UyXenjKId2bE22yd5jGeqe2cNmV25iSkWZPPA",
     link: "https://discordapp.com/",
   },
-  
 ];
 
 function Home() {
