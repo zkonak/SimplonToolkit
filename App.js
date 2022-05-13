@@ -38,7 +38,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <AppRoute />
-      <NavigationContainer>
+      {/* <NavigationContainer>
         <Header HeaderName={routes[index].title} />
 
         <Stack.Navigator>
@@ -51,7 +51,7 @@ export default function App() {
           renderScene={renderScene}
           barStyle={{ backgroundColor: STYLE.MAINCOLOR }}
         />
-      </NavigationContainer>
+      </NavigationContainer> */}
     </Provider>
   );
 }
